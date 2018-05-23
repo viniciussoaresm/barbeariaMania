@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/cliente', 'ClienteController@novo');
+
+
+Route::get('/client', 'ClienteController@list');
+ 
+Route::put('/cliente/{id}', 'ClienteController@editar');
+ 
+Route::delete('/cliente/{id}', 'ClienteController@excluir');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
