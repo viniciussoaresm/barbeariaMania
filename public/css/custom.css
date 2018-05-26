@@ -1,0 +1,56 @@
+body {
+	padding-top: 50px;
+	color: #959595;
+	}
+	
+
+	
+.feature {
+	background-color: yellowgreen;
+	color: greenyellow;
+	}
+	
+.article-intro {
+    margin-bottom: 25px;
+}
+
+.footer-blurb {
+    background-color:black;
+    color: #959595;
+}
+    
+.footer-blurb-item {
+    padding: 30px;
+    }
+ 
+.small-print {
+	background-color:black;
+	padding: 30px 0;
+}
+
+.link-login{
+	color: #959595 ;
+		font-size: 150%;
+}
+
+.Body-style{
+	background-image:url("/imagens/bg.jpg");
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+}
+
+.post{
+	color:white;
+}
+
+.post a{
+	color:white;
+}
+.cont-body{
+	margin: 5%;
+}
+
+.img-banner{
+	width: 100%;
+	margin-top: 2%;
+}
