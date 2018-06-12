@@ -11,4 +11,19 @@ use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
+
+    protected function encriptPassword($argPassword)
+    {
+        $argPassword =  str_replace('a','*',$argPassword);
+        $argPassword = str_replace('e','+',$argPassword);
+        return base64_encode($argPassword);
+    }
+    
+    protected function decriptPassword($argPassword)
+    {
+        $argPassword =  str_replace('*','a',$argPassword);
+        $argPassword = str_replace('+','e',$argPassword);
+        return base64_decode($argPassword);
+    }
+
 }

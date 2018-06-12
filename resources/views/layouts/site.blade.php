@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?php echo asset('css/bootstrap.min.css')?>" type="text/css">
 
 </head>
-<body class="Body-style">
+<body class="">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
                         <a href="#">Contato</a>
@@ -34,16 +34,17 @@
                 @yield('user')
 
             </div>
-        </div>
-    </nav>
-    <div class="row img-banner">
-        <div class="col-sm-2 col-md-5 col-md-offset-5">
-                <img class="img-responsive img-rounded" src="imagens/banner.png " alt="">
-        </div>
+        </div>        
+    </nav>  
+            
+    <div class="row Body-style">
+            <div class="div-banner ">
+                    <img class="img-responsive banner" src="/imagens/banner.png" alt="Imagem"/>
+            </div>  
+            <div class="content-body">
+            @yield('content')
+            </div>
     </div>
-    <div class="container cont-body"> 
-	    @yield('content')
-    </div>	
 	<footer>
 		<div class="footer-blurb">
 			<div class="container">

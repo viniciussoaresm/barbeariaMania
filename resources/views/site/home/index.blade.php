@@ -1,48 +1,33 @@
 @extends('layouts.site')
 
 @section('user')
+<?php if(!$user): ?>
 <div class="navbar-form navbar-right " >
         <a class="link-login" href="/login">
                 <span class="glyphicon glyphicon-user">
-            </span> Login
+            </span> Login 
         </a>
     </div> 
-@endsection
+<?php endif; ?>   
 
-
-
-@section('content')
-<div class="container">
-
-    <div class="row post">
-        <article class="col-md-4 article-intro ">
-            <a href="#">
-                <img class="img-responsive img-rounded" src="imagens/corte1.jpg" alt="">
-            </a>
-            <h3>
-                <a href="#">Corte Social</a>
-            </h3>
-            <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-        </article>
-        <article class="col-md-4 article-intro">
-            <a href="#">
-                <img class="img-responsive img-rounded" src="imagens/corte2.jpg" alt="">
-            </a>
-            <h3>
-                <a href="#">Corte Moicano</a>
-            </h3>
-            <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
-        </article>
-
-        <article class="col-md-4 article-intro">
-            <a href="#">
-                <img class="img-responsive img-rounded" src="imagens/corte3.jpg" alt="">
-            </a>
-            <h3>
-                <a href="#">Corte Degrade</a>
-            </h3>
-            <p>Professionally cultivate one-to-one customer service with robust ideas. Completely synergize resource taxing relationships via premier niche markets. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
-        </article>
+<?php if($user): ?>
+<div class="navbar-form navbar-right " >
+    <div class="user-info">
+    <?php echo $user->name ?>
+    <a href="/logout" class="link-logout">
+        Sair
+    </a>
     </div>
-</div>
+</div> 
+<?php endif; ?>
+
+@endsection
+@section('content')
+    <div class="container">
+            <div class="jumbotron promo">
+                <h1>Faça já o seu cadastro.</h1>
+                <p> Inscreva-se em nosso programa de fidelidade e desfrute das vantagens!</p>
+                <p><a class="btn btn-primary btn-lg bnt-home" href="#" role="button">Acessar</a></p>
+            </div>
+    </div>
 @endsection

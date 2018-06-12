@@ -10,46 +10,23 @@
 |
 */
 
-/**
- * Event
- */
-// Route::get('/', 'Ticket\EventController@listEvents');
 Route::get('/', 'Site\SiteController@index');
 Route::get('/login', 'Site\SiteController@login');
-Route::get('/event/show/{id}', 'Ticket\EventController@show');
-Route::get('/event/buy/{id}', 'Ticket\EventController@buy');
-Route::post('/event/pay/{id}', 'Ticket\EventController@pay');
-Route::post('/event/search', 'Ticket\EventController@search');
+Route::get('/logout', 'Site\SiteController@logout');
+Route::post('/login', 'Site\SiteController@dologin');
+Route::get('/newUser', 'Site\SiteController@newUser');
 
-/**
- * Event Admin
- */
+
+Route::group(['prefix' => 'client'], function () {
+    Route::post('/create', 'Client\ClientController@create');
+    Route::get('/panel', 'Client\ClientController@panel');
+});
+    
+
 Route::group(['prefix' => 'admin'], function () {
-    /**
-     * Event
-     */
-    Route::get('/', 'Ticket\EventController@index');
-    Route::get('/event', 'Ticket\EventController@index');
-    Route::post('/event/search', 'Ticket\EventController@search');
-    Route::get('/event/create', 'Ticket\EventController@create');
-    Route::get('/event/edit/{id}', 'Ticket\EventController@edit');
-    Route::post('/event/update/{id}', 'Ticket\EventController@update');
-    Route::post('/event/store', 'Ticket\EventController@store');
-    Route::get('/event/destroy/{id}', 'Ticket\EventController@destroy');
-    Route::get('/event/published/{id}', 'Ticket\EventController@published');
-    Route::get('/event/unpublished/{id}', 'Ticket\EventController@unpublished');
-    
-    /**
-    * User
-    */
-    Route::get('/customer', 'Ticket\CustomerController@index');
-    Route::post('/customer/search', 'Ticket\CustomerController@search');
-    Route::get('/customer/create', 'Ticket\CustomerController@create');
-    Route::get('/customer/show/{id}', 'Ticket\CustomerController@show');
-    Route::get('/customer/edit/{id}', 'Ticket\CustomerController@edit');
-    
-    /**
-    * Ticket
-    */
-    Route::get('/ticket', 'Ticket\TicketController@index');
+    Route::get('/dashboard', 'Adm\AdmController@dashboard');
+    Route::get('/login', 'Adm\AdmController@login');
+    Route::post('/login', 'Adm\AdmController@dologin');
+    Route::get('/register', 'Adm\AdmController@register');
+    Route::post('/register', 'Adm\AdmController@doregister');
 });
