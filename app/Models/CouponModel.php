@@ -15,5 +15,10 @@ class CouponModel extends Model
     {
         return $this->belongsTo('App\Models\ClientModel');
     }
+
+    public function barber()
+    {
+        return $this->belongsTo('App\Models\BarberModel');
+    }
     
 }

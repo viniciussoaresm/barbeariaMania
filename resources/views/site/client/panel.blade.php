@@ -11,20 +11,38 @@
 <?php endif; ?>   
 
 <?php if($user): ?>
-<div class="navbar-form navbar-right " >
-    <div class="user-info">
     <?php echo $user->name ?>
-    <a href="/logout" class="link-logout">
-        Sair
-    </a>
-    </div>
-</div> 
 <?php endif; ?>
 
 @endsection
+
 @section('content')
-    <div class="container">
-            <div class="panel panel-default dashboardPanel">
+<div class="full-width intro">
+        <div class="full-height not-completely-full">
+            <div class="fixed">
+              <figure class="background-image3 parallax parallax-banner"></figure>
+            </div>
+            <div class="full-height-wrapper white-text">
+              <div class="parent">
+                <div class="bottom">
+                  <div class="container">
+                    <div class="animatedblock delay2 animatedUp">
+                      <div class="col-lg-6 col-md-offset-1 col-md-7">
+                        <div class="banner-textblock">
+                          <h1 class="header">Consulte seus Copons</h1>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="overlay"></div>
+            </div>
+          </div>
+        </div>
+        <section class="white">
+          <div class="container clearfix">
+                          <div class="panel panel-default dashboardPanel">
                 <div class="panel-heading dashboardPanel">Tikets para Cortes</div>
                 <div class="panel-body"><?php echo $tickets ?></div>
             </div>
@@ -36,14 +54,15 @@
               
             <?php 
             if($coupons): ?> 
-                <h1 class="head-table"> Cortes </h1>
-                <div class="table-coupons">
-                    <table class="table table-bordered">
+               <div class="panel panel-default dashboardPanel">
+                <div class="panel-heading dashboardPanel">Cortes Realizados</div>
+                <div class="panel-body">
+                    <table class="table">
                             <thead>
                                 <tr>
                                     <th class="text-center" scope="col"></th>
                                     <th class="text-center" scope="col">Data</th>
-                                    <th class="text-center" scope="col">Utilizado</th>
+                                    <th class="text-center" scope="col">Barbeiro</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,16 +72,18 @@
                                         <tr>
                                             <th class="text-center" scope="row"><?php echo $item->id ?></th>
                                             <td class="text-center" ><?php echo $item->registration_date  ?></td> 
-                                            <th class="text-center" scope="col"><?php echo $item->status?"Sim":"Náo"  ?></th>              
+                                            <th class="text-center" scope="col"><?php echo $item->barber->name  ?></th>              
                                         </tr>   
                                 <?php
                                     endforeach; 
                                 ?>
                             </tbody>
                     </table>
-                </div>    
+                </div>
+            </div>
             <?php endif; ?>
         
             </div>
     </div>
+        </section>  
 @endsection

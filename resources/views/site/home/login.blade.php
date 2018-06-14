@@ -11,28 +11,45 @@
 
 
 @section('content')  
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-                <div class="account-wall">
-                    <form class="form-signin" action="/login" method="POST">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input name='email' id='email' type="email" class="form-control" placeholder="Email" required autofocus>
+<div class="full-width intro">
+        <div class="full-height not-completely-full">
+            <div class="fixed">
+              <figure class="background-image3 parallax parallax-banner"></figure>
+            </div>
+            <div class="full-height-wrapper white-text">
+              <div class="parent">
+                <div class="bottom">
+                  <div class="container">
+                    <div class="animatedblock delay2 animatedUp">
+                      <div class="col-lg-6 col-md-offset-1 col-md-7">
+                        <div class="banner-textblock">
+                          <p class="large">Painel</p>
+                          <h1 class="header">Digite suas credenciais<br>E faça Login</h1>
                         </div>
-                        <div class="form-group">
-                            <label for="password" class="col-2 col-form-label">Senha</label>
-                            <input name='password' id='password' x type="password" class="form-control" placeholder="Password" required>
-                        </div>    
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Acessar</button>
-                    </form>
-                </div>   
-                <a href="/newUser" class="buttonNewAccount">Cadastrar conta</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="overlay"></div>
+            </div>
+          </div>
         </div>
-    </div>
+        <section class="white">
+          <div class="container clearfix">
+            <div class="col-md-6 col-md-offset-3 col-sm-6 extra-padding-right">
+              <form class="form-part" method="post" action="/login" name="loginform" id="loginform" autocomplete="off">
+                    <input name="email" type="email" id="email" size="30" placeholder="Login" require>
+                    <input name="password" type="password" id="password" size="30" placeholder="Senha" require>
+                    <div class="input-wrapper clearfix"> <span id="message"></span>
+                        <div class="clear"></div>
+                            <input type="submit" class="button" value="Logar" id="submitLogin" name="Submit" />
+                        </div>
+              </form>
+            </div>
+          </div>
+        </section>
 @endsection
-
-
 @section('js')
 <script type="text/javascript" src="<?php echo asset('js/login.js')?>"></script>    
 @endsection

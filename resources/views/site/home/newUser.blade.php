@@ -8,15 +8,36 @@
 
 @endsection
 
-
-
 @section('content') 
+<div class="full-width intro">
+        <div class="full-height not-completely-full">
+            <div class="fixed">
+              <figure class="background-image3 parallax parallax-banner"></figure>
+            </div>
+            <div class="full-height-wrapper white-text">
+              <div class="parent">
+                <div class="bottom">
+                  <div class="container">
+                    <div class="animatedblock delay2 animatedUp">
+                      <div class="col-lg-6 col-md-offset-1 col-md-7">
+                        <div class="banner-textblock">
+                              <h1 class="header">Efetue seu Cadastro</h1>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="overlay"></div>
+            </div>
+          </div>
+        </div>
+        <section class="white">
     <div class="content-form"> 
         <div class="row">
             <div class="col-md-1">
             </div>
             <div class="col-md-10">
-                <h1 class="form-header"> Cadastro </h1>
                 <form class='form-new-user' action="/client/create" method="post">
                         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> 
                         <div class="form-group">
@@ -60,7 +81,7 @@
                             <input class="form-control" required type="date" value="1993-08-19" name="birthday" id="birthday">
                         </div>
                         <div class="form-group">
-                            <button  type="submit" class="btn btn-primary bnt-form">Cadastrar</button>
+                            <button  type="submit" class="button">Cadastrar</button>
                         </div>
                 </form>
             </div>  
@@ -68,6 +89,7 @@
             </div>
         </div>
     </div>
+        </section>
 @endsection
 
 

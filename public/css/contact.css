@@ -1,0 +1,81 @@
+input, textarea, select {
+	border: 0;
+	-webkit-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+	float: none;
+	display: block;
+	margin: 0px;
+	-webkit-appearance: none;
+	-webkit-border-radius:0; 
+    border-radius:0;
+}
+textarea {
+	resize: none;
+}
+#message {
+	margin: 0;
+	padding: 0px;
+	z-index: 200;
+	height: auto;
+	text-align: center !important
+}
+.error_message, #success_page {
+	display: block;
+	height: auto;
+	color: #d31800;
+	font-style: italic;
+	font-size: 12px;
+	padding: 10px 0px 0px 0px;
+	line-height: 1.5;
+	margin-bottom: -10px;
+	position: relative;
+}
+#success_page {
+	color: #2b2b2b !important;
+}
+.loader {
+	display: none;
+}
+.form-part {
+	padding: 0;
+	margin-top: 4px;
+}
+.form-part > textarea, .form-part > select, .form-part > input:not([type="submit"]):not([type="image"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]) {
+	display: block;
+	width: 100%;
+	padding: 20px 25px;
+	margin-bottom: 20px;
+	border: 1px solid #ececec;
+	text-align: left;
+	background: #fcfcfc;
+}
+.form-part > textarea {
+	height: 200px;
+	resize: none;
+}
+.form-part > .input-wrapper {
+	position: relative;
+}
+.form-part input:focus, .form-part textarea:focus {
+	background: #f9f9f9 !important;
+}
+.form-part .button {
+	border: 1px solid #d8d8d8;
+	padding: 13px 25px 14px;
+	line-height: 1;
+	display: inline-block;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	font-size: 13px !important;
+	margin-right: 10px;
+	font-weight: 400;
+	font-family: Oswald, Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	background: none;
+	color: #2b2b2b;
+}
+.form-part .button:hover {
+	border: 1px solid #555;
+}

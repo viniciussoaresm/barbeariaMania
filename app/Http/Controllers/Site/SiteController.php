@@ -66,8 +66,8 @@ class SiteController extends Controller
 
         $consumers = Client::where('email','=',$request->email)->get()->take(1);
 
+        
         foreach($consumers as $consumer){
-
             $psw = $this->encriptPassword($request->password);
 
             if($consumer->password == $psw){
@@ -77,11 +77,11 @@ class SiteController extends Controller
         }
 
         if($user){
-            return redirect()->action('Client\ClientController@panel');
-            // return view('site.home.index');
-        }   
-        return redirect()->action('Site\SiteController@login');
-
-    }
+            return response()
+            ->json(['result' => true, 'redirect' => 'client/panel']);
+        }  
+        return response()
+            ->json(['result' => false, 'message' => '<div class="alert alert-danger"> <strong>Falha!</strong> Email ou senha invalido!</div>']);
+     }
 
 }
