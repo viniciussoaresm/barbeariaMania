@@ -86,7 +86,9 @@ class AdmController  extends Controller
         $coupon = new Coupon;
 
         $coupon->client_id = $request->client_id;
-        $coupon->registration_date = date("Y-d-m");
+        $user = User::find($user->id);
+        $coupon->barber_id = $user->barber->id;
+        $coupon->registration_date = date("Y-m-d");
         $coupon->save();
 
         
@@ -102,7 +104,13 @@ class AdmController  extends Controller
      */
     public function dashboard(Request $request)
     {
-        $coupons = Coupon::all();
+        $user = $request->session()->get('user');
+
+        $user = User::find($user->id);
+
+
+
+        $coupons = Coupon::where('barber_id','=',$user->barber->id)->orderby('id','DESC')->take(10)->get();
         
 
         return view('site.adm.dashboard')->with(compact('coupons'));    

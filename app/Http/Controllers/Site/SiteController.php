@@ -84,4 +84,19 @@ class SiteController extends Controller
             ->json(['result' => false, 'message' => '<div class="alert alert-danger"> <strong>Falha!</strong> Email ou senha invalido!</div>']);
      }
 
+     public function docontact(Request $request)
+    {     
+
+        return view('site.home.index');
+
+     }
+
+
+     
+
+     public function contact(Request $request)
+     {
+        return view('site.home.contact')->with(compact('form'));        
+     }
+
 }

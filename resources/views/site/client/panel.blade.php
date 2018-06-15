@@ -16,6 +16,12 @@
 
 @endsection
 
+@section('menu')   
+    <li> <a href="/">Home</a></li>
+    <li> <a href="contact.php" >Contato</a> </li>          
+    <li> <a href="/logout" > Sair </a> </li>
+@endsection
+
 @section('content')
 <div class="full-width intro">
         <div class="full-height not-completely-full">
@@ -42,9 +48,9 @@
         </div>
         <section class="white">
           <div class="container clearfix">                        
-    <h1> Junte 8 Cupons para ganha um ticket de corte grátis </h1>  
+    <h1> Junte 8 Cupons e resgate um ticket de corte grátis </h1>  
     
-    <button  id="generateTicket" user-id = "<?php echo $user->id ?>" class="button">Gerar Ticket</button>
+    <button  id="generateTicket" user-id = "<?php echo $user->id ?>" class="button">Resgatar Ticket</button>
 
 
         <div class="wrap-table100 tableInfo">
@@ -74,7 +80,6 @@
                                 <thead>                                   
                                     <tr class="table100-head">
                                         <th >Codigo</th>
-                                        <th>Ativo?</th>
                                         <th >Gerado em</th>
                                         <th >Valido até</th>
                                     </tr>
@@ -83,7 +88,6 @@
                                     <?php foreach ($tickets as $key => $item):     ?>
                                         <tr>
                                                 <td class="column3"><?php echo $item->code  ?></td>  
-                                                <td class="column3"><?php echo $item->status?"Sim":"Não"  ?></td>    
                                                 <td class="column2"><?php echo \Carbon\Carbon::parse($item->registration_date)->format('d/m/Y')  ?></td>  
                                                 <td class="column2"><?php echo \Carbon\Carbon::parse($item->valid_date)->format('d/m/Y')  ?></td>     
                                         </tr>   

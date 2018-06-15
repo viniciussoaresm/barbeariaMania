@@ -72,7 +72,10 @@ jQuery(document).ready(function() {
               method: "POST",
               url: "/ticket/generate",
               data: { client: clientId}
-             })    
+             }).done(function( data ) {
+                      alert(data.message);
+            });
+            window.location.reload();
         });
 
 });

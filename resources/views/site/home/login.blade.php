@@ -8,7 +8,10 @@
 
 @endsection
 
-
+@section('menu')   
+    <li> <a href="/">Home</a></li>
+    <li> <a href="contact.php" >Contato</a> </li>          
+@endsection
 
 @section('content')  
 <div class="full-width intro">

@@ -1,11 +1,20 @@
 @extends('layouts.site')
 
 @section('user')
-<?php if($user): ?>
+<?php if(isset($user)): ?>
     <?php echo $user->name ?>
 </div> 
 <?php endif; ?>
 @endsection
+
+@section('menu')   
+    <li> <a href="/">Home</a></li>
+    <li> <a href="/#secao1">Serviços</a></li>
+    <li> <a href="/login">Login</a> </li>
+    <li> <a href="/contact" >Contato</a> </li>      
+    <li> <a href="/admin/login">Painel ADM</a> </li>        
+@endsection
+
 @section('content')
 <div class="full-width intro">
         <div class="full-height not-completely-full">

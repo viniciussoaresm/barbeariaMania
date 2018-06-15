@@ -15,6 +15,9 @@ Route::get('/login', 'Site\SiteController@login');
 Route::get('/logout', 'Site\SiteController@logout');
 Route::post('/login', 'Site\SiteController@dologin');
 Route::get('/newUser', 'Site\SiteController@newUser');
+Route::get('/contact', 'Site\SiteController@contact');
+Route::post('/contact', 'Site\SiteController@docontact');
+
 
 
 Route::group(['prefix' => 'client'], function () {

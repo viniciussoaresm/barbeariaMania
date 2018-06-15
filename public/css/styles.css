@@ -1297,6 +1297,11 @@ h3.panel-title {
 	left: 0;
 	top: 0;
 }
+
+.text-area{
+	background-color: #101010;	
+	color:white;
+}
 .background-image11 {
 	height: 100%;
 	display: block;

@@ -54,7 +54,7 @@ class ClientController extends Controller
 
         $validCoupons = Client::find($user->id)->couponsValid;
 
-        $tickets = Client::find($user->id)->tickets;
+        $tickets = Client::find($user->id)->tickets->where('status','=',0);
 
         $ticketsPending  = (int)($validCoupons->count()/8)*1;        
 
@@ -82,21 +82,20 @@ class ClientController extends Controller
 
             if($return){
                 $ticket = new Ticket();
-                $ticket->client = $request->client;
+                $ticket->client_id = $request->client;
                 $ticket->registration_date = date('Y-m-d');
                 $ticket->code = md5(date('Y-m-d'));
                 $ticket->valid_date =  \Carbon\Carbon::now()->addDay(90)->format('Y-m-d');
                 if($ticket->save()){
                     return response()
-                    ->json(['result' => true]);
+                    ->json(['result' => true,'message' => 'Ticket Gerado!']);
                 }
             }  
-
          
         }
 
         return response()
-        ->json(['result' => false]);   
+        ->json(['result' => false,'message' => 'Não Possui Cupons para regatar!']);   
     }
     
 

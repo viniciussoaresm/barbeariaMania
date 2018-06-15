@@ -10,4 +10,9 @@ class userModel extends Model
     const UPDATED_AT = 'updated_at';
 
     protected $table = 'users';
+
+    public function barber()
+    {
+        return $this->belongsTo('App\Models\BarberModel');
+    }
 }

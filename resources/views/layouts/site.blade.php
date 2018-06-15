@@ -28,12 +28,8 @@
             </div>  
       <!-- start main nav -->
       <nav id="main-nav">
-        <ul class="clearfix">
-          <li> <a href="/">Home</a></li>
-          <li> <a href="/#secao1">Serviços</a></li>
-          <li> <a href="/login">Login</a> </li>
-          <li> <a href="contact.php" >Contato</a> </li>          
-          <li> <a href="/logout" > Sair </a> </li>
+          <ul class="clearfix">
+      @yield('menu')
         </ul>
       </nav>
       <!-- end main nav --> 
