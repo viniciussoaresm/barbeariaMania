@@ -49,7 +49,7 @@
     </div>
       <!-- start header -->
     <header id="header" class="clearfix">
-        <h1 id="logo" style="font-size:0px;"><a href="index.html"><img src="<?php echo asset('images/logo.png')?>" width="180px"></a></h1>
+        <h1 id="logo" style="font-size:0px;"><a href="/"><img src="<?php echo asset('/images/logo.png')?>" width="180px"></a></h1>
      
     </header>
       <!-- end header --> 
