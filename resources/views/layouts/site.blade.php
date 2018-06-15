@@ -13,6 +13,9 @@
     <link href="<?php echo asset('css/jquery.fancybox.css')?>"  rel="stylesheet" type="text/css" media="screen" />
     <link href="<?php echo asset('css/responsive.css')?>" rel="stylesheet" type="text/css" media="screen" />
     <link href="<?php echo asset('css/flexslider.css')?>" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="<?php echo asset("css/util.css")?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo asset("css/main.css")?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo asset("fonts/font-awesome-4.7.0/css/font-awesome.min.css")?>" >
     <link href="https://fonts.googleapis.com/css?family=Amiri:400,600" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet" />

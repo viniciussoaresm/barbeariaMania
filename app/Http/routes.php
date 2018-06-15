@@ -21,6 +21,10 @@ Route::group(['prefix' => 'client'], function () {
     Route::post('/create', 'Client\ClientController@create');
     Route::get('/panel', 'Client\ClientController@panel');
 });
+
+Route::group(['prefix' => 'ticket'], function () {
+    Route::post('/generate', 'Client\ClientController@generateTicket');
+});
     
 
 Route::group(['prefix' => 'admin'], function () {

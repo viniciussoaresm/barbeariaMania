@@ -41,49 +41,84 @@
           </div>
         </div>
         <section class="white">
-          <div class="container clearfix">
-                          <div class="panel panel-default dashboardPanel">
-                <div class="panel-heading dashboardPanel">Tikets para Cortes</div>
-                <div class="panel-body"><?php echo $tickets ?></div>
-            </div>
+          <div class="container clearfix">                        
+    <h1> Junte 8 Cupons para ganha um ticket de corte grátis </h1>  
+    
+    <button  id="generateTicket" user-id = "<?php echo $user->id ?>" class="button">Gerar Ticket</button>
 
-            <div class="panel panel-default dashboardPanel">
-                <div class="panel-heading dashboardPanel">Cupons</div>
-                <div class="panel-body"><?php echo $validCoupons->count() ?></div>
-            </div>
-              
-            <?php 
-            if($coupons): ?> 
-               <div class="panel panel-default dashboardPanel">
-                <div class="panel-heading dashboardPanel">Cortes Realizados</div>
-                <div class="panel-body">
-                    <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="text-center" scope="col"></th>
-                                    <th class="text-center" scope="col">Data</th>
-                                    <th class="text-center" scope="col">Barbeiro</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                    foreach ($coupons as $key => $item): 
-                                ?>
-                                        <tr>
-                                            <th class="text-center" scope="row"><?php echo $item->id ?></th>
-                                            <td class="text-center" ><?php echo $item->registration_date  ?></td> 
-                                            <th class="text-center" scope="col"><?php echo $item->barber->name  ?></th>              
-                                        </tr>   
-                                <?php
-                                    endforeach; 
-                                ?>
-                            </tbody>
+
+        <div class="wrap-table100 tableInfo">
+                <div class="table100">
+                    <table>
+                        <thead>                                   
+                            <tr class="table100-head">
+                                <th  >Tikets para Cortes</th>
+                                <th >Cupons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="column1"><?php echo $ticketsPending ?></td>
+                                <td class="column2"><?php echo $validCoupons->count() ?></td>
+                            </tr>   
+                        </tbody>
                     </table>
                 </div>
-            </div>
+            </div>  
+
+            <?php 
+            if($tickets->count() >= 1): ?>     
+                    <div class="wrap-table100 tableInfo">
+                        <div class="table100">
+                            <table>
+                                <thead>                                   
+                                    <tr class="table100-head">
+                                        <th >Codigo</th>
+                                        <th>Ativo?</th>
+                                        <th >Gerado em</th>
+                                        <th >Valido até</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($tickets as $key => $item):     ?>
+                                        <tr>
+                                                <td class="column3"><?php echo $item->code  ?></td>  
+                                                <td class="column3"><?php echo $item->status?"Sim":"Não"  ?></td>    
+                                                <td class="column2"><?php echo \Carbon\Carbon::parse($item->registration_date)->format('d/m/Y')  ?></td>  
+                                                <td class="column2"><?php echo \Carbon\Carbon::parse($item->valid_date)->format('d/m/Y')  ?></td>     
+                                        </tr>   
+                                    <?php  endforeach;   ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>  
             <?php endif; ?>
+              
+            <?php 
+            if($coupons): ?>     
+                    <div class="wrap-table100">
+                        <div class="table100">
+                            <table>
+                                <thead>                                   
+                                    <tr class="table100-head">
+                                        <th  style="margin-top:5%;" >Data</th>
+                                        <th >Barbeiro</th>
+                                        <th>Usado?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($coupons as $key => $item):     ?>
+                                        <tr>
+                                                <td class="column2"><?php echo \Carbon\Carbon::parse($item->registration_date)->format('d/m/Y') ?></td>
+                                                <td class="column3"><?php echo $item->barber->name  ?></td>  
+                                                <td class="column3"><?php echo $item->status?"Sim":"Não"  ?></td>          
         
-            </div>
-    </div>
+                                        </tr>   
+                                    <?php  endforeach;   ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>  
+            <?php endif; ?>
         </section>  
 @endsection

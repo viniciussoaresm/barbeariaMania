@@ -16,6 +16,12 @@ class ClientModel extends Model
         return $this->hasMany('App\Models\CouponModel','client_id');
     }
 
+    public function tickets()
+    {
+        return $this->hasMany('App\Models\TicketModel','client_id');
+    }
+
+
     public function couponsValid()
     {
         return $this->hasMany('App\Models\CouponModel','client_id')->where('status', 0);

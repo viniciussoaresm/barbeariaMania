@@ -60,6 +60,19 @@ jQuery(document).ready(function() {
 
         });
         return false;
-    });
+    }); 
+
+    $('#generateTicket').on('click', function() {
+
+
+        var clientId = $(this).attr('user-id');
+
+
+        $.ajax({
+              method: "POST",
+              url: "/ticket/generate",
+              data: { client: clientId}
+             })    
+        });
 
 });
