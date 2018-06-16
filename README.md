@@ -15,6 +15,7 @@ http://barbermania.tk/admin/login
 
  
 <h1> Acesso Cliente </h1>
+http://barbermania.tk/login
 
 <b>Login:</b> v@email.com </br>
 <b>Senha:</b> 852
