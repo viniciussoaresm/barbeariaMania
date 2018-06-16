@@ -10,6 +10,7 @@
 @section('menu')   
     <li> <a href="/">Home</a></li>
     <li> <a href="/#secao1">Serviços</a></li>
+    <li> <a href="/newUser">Cadastrar</a> </li>
     <li> <a href="/login">Login</a> </li>
     <li> <a href="/contact" >Contato</a> </li>      
     <li> <a href="/admin/login">Painel ADM</a> </li>        

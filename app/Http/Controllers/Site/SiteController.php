@@ -40,12 +40,11 @@ class SiteController extends Controller
      */
     public function logout(Request $request)
     {
-        $user = false;
         if($request->session()->get('user'))
         {
             $request->session()->forget('user');
         }
-        return view('site.home.index')->with(compact('user'));
+        return redirect()->action('Site\SiteController@login');
     }
 
     public function newUser(Client $client)

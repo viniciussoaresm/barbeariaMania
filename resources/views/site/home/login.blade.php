@@ -41,6 +41,7 @@
         <section class="white">
           <div class="container clearfix">
             <div class="col-md-6 col-md-offset-3 col-sm-6 extra-padding-right">
+                <a class="button" href=" /newUser" >Quero me Cadastrar</a>               
               <form class="form-part" method="post" action="/login" name="loginform" id="loginform" autocomplete="off">
                     <input name="email" type="email" id="email" size="30" placeholder="Login" require>
                     <input name="password" type="password" id="password" size="30" placeholder="Senha" require>
