@@ -10,7 +10,7 @@
 
 @section('menu')   
     <li> <a href="/">Home</a></li>
-    <li> <a href="contact.php" >Contato</a> </li>          
+    <li> <a href="/contact" >Contato</a> </li>          
 @endsection
 
 @section('content')  
