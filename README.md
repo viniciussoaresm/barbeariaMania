@@ -1,10 +1,12 @@
-# barbeariaMania
+# Barbearia Mania
 Gerenciamento de cupons 
 
-acesso ADMIN
+<h1> Acesso ADMIN </h1>
+http://barbermania.tk/admin/login
 
-(localhost)/admin/login
+<b>Login:</b> vinicius </br>
+<b>Senha:</b> 852
 
-login: vinicius
-senha: 852
+
+<img src="https://github.com/viniciussoaresm/barbeariaMania/blob/master/menu.png" />
  
